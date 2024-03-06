@@ -23,12 +23,13 @@ function GuessInput({ answer, previousGuesses, setPreviousGuesses }) {
     const nextNumberOfSubmissions = numberOfSubmissions + 1;
     setNumberOfSubmissions(nextNumberOfSubmissions);
 
-    if (answer === guessInput) {
-      setWon(true);
-    }
-
     if (nextNumberOfSubmissions === 6) {
       setLost(true);
+    }
+
+    if (answer === guessInput) {
+      setWon(true);
+      setLost(false);
     }
   }
 
